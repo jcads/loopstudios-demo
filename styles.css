@@ -14,7 +14,11 @@
   -moz-box-sizing: border-box;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  background-color: black;
+}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 html {
@@ -34,7 +38,8 @@ header, footer {
 }
 
 h2 {
-  font-size: 4rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 4.5rem;
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
@@ -74,7 +79,7 @@ header {
   margin-bottom: 10rem;
 }
 
-header h4#logo {
+#logo {
   font-size: 3.5rem;
 }
 
@@ -99,6 +104,7 @@ main p {
   color: var(--dark-gray);
 }
 
+
 /* ABOUT */
 
 .about {
@@ -119,7 +125,39 @@ main p {
 .about img {
   width: 70%;
 }
-/* CREATIONs s */
+/*  SHOWCASE */
+
+.showcase header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.showcase header button {
+	height: 4.5rem;
+	border: .1rem solid var(--black);
+	background: none;
+  transition: .25s ease-in;
+}
+
+.showcase header button a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+	color: var(--black);
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	font-size: 1.5rem;
+	padding: 2.25rem 4rem;
+}
+
+.showcase header button:hover {
+  background-color: black;
+} 
+
+.showcase header button a:hover {
+  color: var(--white);
+}
 
 .creations {
   display: flex;
@@ -144,15 +182,89 @@ main p {
   bottom: .5rem; 
   right: 0;
   box-shadow: inset 0px 0px 150px black;
+  transition: box-shadow .15s ease-in;
+}
+
+.creation-item img {
+  transition: opacity .25s ease-in;
 }
 
 .creations p {
   display: inline-block;
   text-transform: uppercase;
   position: absolute;
-  top: 95%;
-  left: 1%;
+  top: 80%;
+  left: 17%;
+  font-size: 3rem;
+  color: var(--white);
+  transition: color .25s ease-in;
 }
+
+.img-container:hover img,
+.img-container:hover ~ p,
+.img-container:hover::after,
+.creations p:hover {
+  cursor: pointer;
+}
+
+.img-container:hover img {
+  opacity: 0.2
+}
+
+.img-container:hover ~ p {
+  color: var(--black);
+}
+
+.img-container:hover::after {
+  box-shadow: none;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 14rem 3rem;
+}
+
+footer > * {
+  width: 50%;
+  padding-bottom: 2rem;
+}
+
+footer nav {
+  font-size: 1.2rem;
+  justify-content: flex-start;
+}
+
+footer nav li {
+  padding-right: 4rem;
+}
+
+footer #logo {
+  font-size: 2.5rem;
+}
+
+footer .socials {
+  font-size: 2.5rem;
+  text-align: right;
+}
+
+footer .socials i {
+  padding-left: 1.5rem;
+}
+
+footer .copyright {
+  color: var(--dark-gray);
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+
 
 @media all and (max-width: 1000px) {
   .hero #heading, .about img, .about section {
