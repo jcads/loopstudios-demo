@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+header, footer {
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+
+.hero {
+  background-image: url("images/desktop/image-hero.jpg");
+  padding: 6rem 14rem 8.7rem;
+  color: var(--white);
+  position: relative;
+}
+
+/*
+.hero::before {
+  content: "";
+  background-image: url("images/desktop/image-hero.jpg");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: .5;
+  z-index: -3;
+}
+*/
+.hero h1 {
+	font-size: 7rem;
+	border: .2rem white solid;
+	width: 60%;
+	text-transform: uppercase;
+	padding: 3.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+
+header h4#logo {
+  font-size: 3.5rem;
+}
+
+nav {
+	display: flex;
+	list-style: none;
+	justify-content: space-evenly;
+	width: 40%;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+/* Main */
+
+
+main {
+  font-size: 1.5rem;
+  padding: 12rem 14rem;
+}
+
+main p {
+  color: var(--dark-gray);
+}
+
+/* ABOUT */
+
+.about {
+  position: relative;
+  margin-bottom: 15rem;
+}
+
+.about section {
+	/* left: 60%; */
+  position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: var(--white);
+	padding: 11rem 0 1rem 9rem;
+	width: 48%;
+}
+
+.about img {
+  width: 70%;
+}
+/* CREATIONs s */
+
+.creations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.creation-item {
+  position: relative;
+  margin: 0.8rem 0;
+}
+
+.creation-item .img-container {
+  position: relative;
+}
+
+.creation-item .img-container::after {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  bottom: .5rem; 
+  right: 0;
+  box-shadow: inset 0px 0px 150px black;
+}
+
+.creations p {
+  display: inline-block;
+  text-transform: uppercase;
+  position: absolute;
+  top: 95%;
+  left: 1%;
+}
+
+@media all and (max-width: 1000px) {
+  .hero #heading, .about img, .about section {
+    width: 100%;
+  }
+
+  .about section {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .creations {
+    justify-content: space-evenly;
+  }
+}
+
+@media all and (max-width: 768px) {
+  
+}
+
+
