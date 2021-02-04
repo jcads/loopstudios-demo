@@ -21,6 +21,8 @@
 }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+/* DEFAULTS */
+
 html {
   font-size: 62.5%;
   font-family: 'Josefin Sans', sans-serif;
@@ -44,6 +46,31 @@ h2 {
   margin-bottom: 2rem;
 }
 
+li {
+  position: relative;
+  padding: .75rem;
+	list-style: none;
+}
+
+li a::after {
+	border-bottom: 2px white solid;
+	content: "";
+	position: absolute;
+	top: 20px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+  width: 0;
+  transition: .25s ease-in-out;
+}
+
+li a:hover::after {
+	width: 50%;
+  cursor: pointer;
+}
+
+/* Hero Section */
 
 .hero {
   background-image: url("images/desktop/image-hero.jpg");
@@ -52,23 +79,10 @@ h2 {
   position: relative;
 }
 
-/*
-.hero::before {
-  content: "";
-  background-image: url("images/desktop/image-hero.jpg");
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: .5;
-  z-index: -3;
-}
-*/
 .hero h1 {
-	font-size: 7rem;
+	font-size: 4.9vw;
 	border: .2rem white solid;
-	width: 60%;
+	width: 47.7vw;
 	text-transform: uppercase;
 	padding: 3.5rem;
 }
@@ -77,6 +91,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10rem;
+  align-items: center;
 }
 
 #logo {
@@ -85,7 +100,6 @@ header {
 
 nav {
 	display: flex;
-	list-style: none;
 	justify-content: space-evenly;
 	width: 40%;
   align-items: center;
@@ -93,8 +107,6 @@ nav {
 }
 
 /* Main */
-
-
 main {
   font-size: 1.5rem;
   padding: 12rem 14rem;
@@ -113,7 +125,6 @@ main p {
 }
 
 .about section {
-	/* left: 60%; */
   position: absolute;
 	bottom: 0;
 	right: 0;
@@ -125,6 +136,7 @@ main p {
 .about img {
   width: 70%;
 }
+
 /*  SHOWCASE */
 
 .showcase header {
@@ -238,24 +250,18 @@ footer > * {
 
 footer nav {
   font-size: 1.2rem;
-  justify-content: flex-start;
-}
-
-footer nav li {
-  padding-right: 4rem;
+  justify-content: space-between;
+  width: 40%;
 }
 
 footer #logo {
   font-size: 2.5rem;
 }
 
-footer .socials {
+footer ul {
   font-size: 2.5rem;
-  text-align: right;
-}
-
-footer .socials i {
-  padding-left: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 footer .copyright {
@@ -264,7 +270,19 @@ footer .copyright {
   text-align: right;
 }
 
+.burger {
+	display: none;
+	cursor: pointer;
+}
 
+.burger div {
+	width: 2.4rem;
+	height: .2rem;
+	background-color: var(--white);
+	margin: 5px;
+	border-radius: 50px;
+	transition: all 0.4s ease;
+}
 
 @media all and (max-width: 1000px) {
   .hero #heading, .about img, .about section {
@@ -283,7 +301,52 @@ footer .copyright {
 }
 
 @media all and (max-width: 768px) {
-  
+  .hero {
+    padding: 5rem 9rem 8rem;
+  }
+
+  main {
+    padding: 9rem 5rem;
+  }
+
+  footer {
+    padding: 5rem;
+  }
 }
 
+@media all and  (max-width: 670px) {
+  header nav {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background: black;
+    width: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: flex-start;
+    transition: width 0.7s ease-in-out;
+  }
 
+  header nav li {
+    padding: 1.15rem 2.5rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  .burger {
+    display: block;
+    z-index: 2;
+  }
+
+  #logo {
+    z-index: 2;
+  }
+}
+
+.nav-active {
+  width: 100%;
+}
