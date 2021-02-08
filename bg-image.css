@@ -1,3 +1,4 @@
+/*
 .creations .creation-item .item-1 {
   background-image: url("images/desktop/image-deep-earth.jpg");
 }
@@ -21,4 +22,36 @@
 }
 .creations .creation-item .item-8 {
   background-image: url("images/desktop/image-fisheye.jpg");
+}
+*/
+
+@media all and (max-width: 670px) {
+  .creations .creation-item.item-1 {
+    background-image: url("images/mobile/image-deep-earth.jpg");
+  }
+  .creations .creation-item.item-2 {
+    background-image: url("images/mobile/image-night-arcade.jpg");
+  }
+  .creations .creation-item.item-3 {
+    background-image: url("images/mobile/image-soccer-team.jpg");
+  }
+  .creations .creation-item.item-4 {
+    background-image: url("images/mobile/image-grid.jpg");
+  }
+  .creations .creation-item.item-5 {
+    background-image: url("images/mobile/image-from-above.jpg");
+  }
+  .creations .creation-item.item-6 {
+    background-image: url("images/mobile/image-pocket-borealis.jpg");
+  }
+  .creations .creation-item.item-7 {
+    background-image: url("images/mobile/image-curiosity.jpg");
+  }
+  .creations .creation-item.item-8 {
+    background-image: url("images/mobile/image-fisheye.jpg");
+  }
+    
+  .creations img {
+    display: none;
+  }
 }
