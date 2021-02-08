@@ -14,6 +14,10 @@
   -moz-box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .attribution { 
   font-size: 11px; 
   text-align: center; 
@@ -73,18 +77,19 @@ li a:hover::after {
 /* Hero Section */
 
 .hero {
-  background-image: url("images/desktop/image-hero.jpg");
+  background: url("images/desktop/image-hero.jpg") 100% no-repeat;
   padding: 6rem 14rem 8.7rem;
   color: var(--white);
   position: relative;
+  background-size: cover;
 }
 
 .hero h1 {
-	font-size: 4.9vw;
+	font-size: 5.5vw;
 	border: .2rem white solid;
 	width: 47.7vw;
 	text-transform: uppercase;
-	padding: 3.5rem;
+	padding: 2.5rem;
 }
 
 header {
@@ -276,11 +281,10 @@ footer .copyright {
 }
 
 .burger div {
-	width: 2.4rem;
-	height: .2rem;
+	width: 3rem;
+	height: .3rem;
 	background-color: var(--white);
-	margin: 5px;
-	border-radius: 50px;
+	margin: 6.5px;
 	transition: all 0.4s ease;
 }
 
@@ -315,6 +319,25 @@ footer .copyright {
 }
 
 @media all and  (max-width: 670px) {
+  .hero{
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  main {
+    padding: 20rem 4rem 32rem;
+  }
+
+  .hero {
+    background-image: url("images/mobile/image-hero.jpg");
+  }
+
+  h1#heading {
+    font-size: 11.5vw;
+    padding: 2rem;
+    margin: 22rem auto;
+  }
+
   header nav {
     flex-direction: column;
     position: absolute;
@@ -345,8 +368,68 @@ footer .copyright {
   #logo {
     z-index: 2;
   }
+
+
+  main .showcase {
+    position: relative;
+  }
+
+  main .showcase h2 {
+    margin: auto;
+  }
+
+  main .showcase button {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .creation-item {
+    width: 100%;
+  }
+
+  .creations .img-container {
+    height: 24rem;
+  }
+
+  /* active state */
+  .img-container:hover {
+    opacity: 0.2;
+  }
+
+  .creations p {
+    top: 51%;
+    left: 7%;
+    font-size: 4rem;
+  }
+
+  .creation-item .img-container::after {
+    height: 24rem;
+  }
+
+  main .showcase button {
+    bottom: -4.5%;
+    left: ;
+    translateX: -50%;
+    transform: translateX(-50%);
+    height: 6rem;
+    padding: 0 3rem;
+    margin-top: 5rem;
+  }
+  main .showcase button a{
+    font-size: 2.5rem;
+  }
 }
 
 .nav-active {
   width: 100%;
+}
+
+.clicked .line1 {
+  transform: rotate(-45deg) translate(-7px, 7px);
+}
+.clicked .line2 {
+  opacity: 0;
+}
+.clicked .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
 }
